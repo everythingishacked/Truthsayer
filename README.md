@@ -17,7 +17,8 @@ TruthSayer uses [OpenCV](https://github.com/opencv/opencv-python) and MediaPipe'
 
 Truthsayer can optionally include prompts based on a second video feed to better 'mirror' the original input.
 
-Hit `ESC` on the preview window to exit the resulting display frame, or `CTRL+C` at the terminal to close the Python process.
+Hit `Q` on the preview window to exit the resulting display frame, or 
+`CTRL+C` at the terminal to close the Python process.
 
 
 **Truthsayer is built for Python 3 and will not run on 2.x.**
@@ -26,7 +27,7 @@ Hit `ESC` on the preview window to exit the resulting display frame, or `CTRL+C`
 Optional flags:
 
 - `--help` - Display the below options
-- `--input` - Choose a camera, video file path, or screen dimensions in the form {x y width height} - defaults to device `0`
+- `--input` - Choose a camera, video file path, or screen dimensions in the form `x y width height` - defaults to device `0`
 - `--landmarks` - Set to any value to draw overlayed facial and hand landmarks
 - `--bpm` - Set to any value to include a heart rate tracking chart
 - `--flip` - Set to any value to flip along the y-axis for selfie view
