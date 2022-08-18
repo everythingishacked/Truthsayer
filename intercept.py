@@ -18,8 +18,8 @@ import time
 import sys
 
 
-MAX_FRAMES = 100 # modify this to affect calibration period and amount of "lookback"
-RECENT_FRAMES = int(MAX_FRAMES / 10)
+MAX_FRAMES = 120 # modify this to affect calibration period and amount of "lookback"
+RECENT_FRAMES = int(MAX_FRAMES / 10) # modify to affect sensitivity to recent changes
 
 EYE_BLINK_HEIGHT = .15 # threshold may depend on relative face shape
 
@@ -27,7 +27,7 @@ SIGNIFICANT_BPM_CHANGE = 8
 
 LIP_COMPRESSION_RATIO = .35 # from testing, ~universal
 
-TELL_MAX_TTL = 15 # how long to display a finding
+TELL_MAX_TTL = 30 # how long to display a finding, optionally set in args
 
 TEXT_HEIGHT = 30
 
@@ -87,6 +87,7 @@ def decrement_tells(tells):
 
 
 def main():
+  global TELL_MAX_TTL
   global recording
 
   parser = argparse.ArgumentParser()
@@ -94,6 +95,7 @@ def main():
   parser.add_argument('--landmarks', '-l', help='Set to any value to draw face and hand landmarks')
   parser.add_argument('--bpm', '-b', help='Set to any value to draw color chart for heartbeats')
   parser.add_argument('--flip', '-f', help='Set to any value to flip resulting output (selfie view)')
+  parser.add_argument('--ttl', '-t', help='How many frames for each displayed "tell" to last, defaults to 30', default='30')
   parser.add_argument('--record', '-r', help='Set to any value to save a timestamped AVI in current directory')
   parser.add_argument('--second', '-s', help='Secondary video input device (number or path)')
   args = parser.parse_args()
@@ -106,6 +108,8 @@ def main():
   DRAW_LANDMARKS = args.landmarks is not None
   BPM_CHART = args.bpm is not None
   FLIP = args.flip is not None
+  if args.ttl and args.ttl.isdigit():
+    TELL_MAX_TTL = int(args.ttl)
   RECORD = args.record is not None
 
   SECOND = int(args.second) if (args.second or "").isdigit() else args.second
@@ -187,6 +191,8 @@ def main():
 
 
 def new_tell(result):
+  global TELL_MAX_TTL
+
   return {
     'text': result,
     'ttl': TELL_MAX_TTL

@@ -35,7 +35,7 @@ Optional flags:
 - `--landmarks` - Set to any value to draw detected body landmarks from MediaPipe
 - `--record` - Set to any value to write the output to a timestamped AVI recording in the current folder
 - `--second` - Secondary video input device for mirroring prompts (device number or path)
-
+- `--ttl` - Number of subsequent frames to display a tell; defaults to 30
 
 Example usage:
 
