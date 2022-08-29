@@ -41,4 +41,4 @@ Example usage:
 
 - `python intercept.py -h` - Show all argument options
 - `python intercept.py --input 2 --landmarks 1 --flip 1 --record 1` - Camera device 2; overlay landmarks; flip; generate a recording
-- `python intercept.py -i "/Downloads/shakira.mp4"` --second 0 - Use video file as input; use camera device 0 as secondary input for mirroring feedback
+- `python intercept.py -i "/Downloads/shakira.mp4" --second 0` - Use video file as input; use camera device 0 as secondary input for mirroring feedback
