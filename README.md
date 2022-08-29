@@ -3,8 +3,8 @@
 
 Truthsayer lets you monitor the heart rate and possible 'tells' of deception from any face, including live video calls or recordings.
 
-Video demo [Coming 
-Soon](https://youtube.com/EverythingIsHacked?sub_confirmation=1)!™
+Video demo and more info [available 
+here](https://youtu.be/5q-BQ2Q_pqI)!
 
 ![demo](demo.png)
 
