@@ -1,4 +1,4 @@
-## Truthsayer
+# Truthsayer
 ### A Remote-Control Lie Detector
 
 Truthsayer lets you monitor the heart rate and possible 'tells' of deception from any face, including live video calls or recordings.
@@ -21,9 +21,20 @@ Truthsayer can optionally include prompts based on a second video feed to better
 Hit `Q` on the preview window to exit the resulting display frame, or 
 `CTRL+C` at the terminal to close the Python process.
 
+## Install
 
 **Truthsayer is built for Python 3 and will not run on 2.x.**
 
+### Mac 
+You will need Python 3.9 rather than 3.10 (`brew install python@3.9 hdf5`). If you're not on Silcon/ARM, comment `mediapipe-silicon` and uncomment `mediapipe` in `requirements-mac.txt`.
+
+Run `python3.9 -m pip install -r requirements-mac.txt`
+
+### Other OSes
+
+Run `python -m pip install -r requirements.txt`
+
+## Usage
 
 Optional flags:
 
