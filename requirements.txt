@@ -6,3 +6,4 @@ mss==6.1.0
 numpy==1.22.2
 opencv_contrib_python==4.5.5.64
 scipy==1.8.0
+tensorflow==2.10.0
